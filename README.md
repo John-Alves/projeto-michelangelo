@@ -23,6 +23,6 @@ Os materiais e ferramentas utilizados nesse projeto estão listados abaixo:
 * 2x Motor de Passo + eixo: Foi retirado de um DVD antigo. Usou-se o eixo que o próprio aparelho usa para movimentar a lente.  
 * 2x Driver p/ Motor de Passo A4988: Usando para estabelecer a comunicação entre o microcontrolador e os motores de passo.
 * Jumpers.
-* 2x Protoboard 760 pontos.
+* 1x Protoboard 760 pontos.
 * STM32CubeMX: Usando para configurar os pinos adequadamente e devido a implementação da Hardware Abstract Language (HAL).
 * Atollic TrueSTUDIO: IDE de desemvolvimento.
