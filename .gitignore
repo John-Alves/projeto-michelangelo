@@ -1,2 +1,3 @@
 # Ignorando arquivos relacionados com o Debug do projeto
 ./Debug
+/Debug/
