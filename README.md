@@ -16,7 +16,7 @@ _Michelangelo_ vem com intuito de sanar esses problemas evitando o uso desnecess
 
 Outra motivação para o projeto foi: "Deve ser bem legal construir uma máquina que desenha sozinha". :D
 
-## Materiais e Ferramentas Utilizados
+## Materiais e Ferramentas Utilizadas
 
 Os materiais e ferramentas utilizados nesse projeto estão listados abaixo:
 * 1x STM32F030F4 (Cortex M0): Também chamado de "Green Pill", esse é microcontrolador usado no projeto.
@@ -25,4 +25,4 @@ Os materiais e ferramentas utilizados nesse projeto estão listados abaixo:
 * Jumpers.
 * 2x Protoboard 760 pontos.
 * STM32CubeMX: Usando para configurar os pinos adequadamente e devido a implementação da Hardware Abstract Language (HAL).
-* Attolic TrueSTUDIO: IDE de desemvolvimento.
+* Atollic TrueSTUDIO: IDE de desemvolvimento.
