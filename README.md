@@ -18,6 +18,8 @@ Outra motivação para o projeto foi: "Deve ser bem legal construir uma máquina
 
 ## Detalhes e Limitações
 
+![](https://raw.githubusercontent.com/John-Alves/projeto-michelangelo/master/Diagrama%20de%20blocos%20do%20projeto.png)
+
 Para que se envie um desenho à maquina, é necessário gerá-lo em um arquivo G-Code, carregando-o posteriormente no programa GenerateInstructions para que as instruções de movimento tanto dos motores como da caneta sejam filtradas e traduzidas ao microcontrolador.
 
 As instruções traduzidas terão o seguinte formato: [Identificador do motor][Sentido de rotação] [Número de passos]. Existem três identificadores: P, servo motor; X, motor de passos do eixo x; e Y, motor de passos do eixo Y. Ademais, o sentido de rotação pode assumir os valores 0 (zero), sentido horário/de subida; e 1 (um), sentido anti-horário/de descida. Por fim, para as instruções relacionadas aos motores de passos, um terceiro argumento será utilizado, caracterizando o número de passos a serem realizados, no qual varia de 0 a 260 em virtude do alcance.
