@@ -8,26 +8,26 @@
 #include "main.h"
 #include "stm32f0xx_hal.h"
 
-uint16_t stepperPin = GPIO_PIN_0, servoPin = GPIO_PIN_5;
+uint16_t servoPin = GPIO_PIN_5;
 uint16_t stepPin = GPIO_PIN_9, directionPin = GPIO_PIN_10;
 uint8_t instructions[17][10] = {"P1",
-								"X0 171",
-								"P0",
-								"X1 171",
-								"Y0 260",
-								"X0 171",
-								"Y1 31",
-								"X1 137",
-								"Y1 71",
-								"X0 137",
-								"Y1 31",
-								"X1 137",
-								"Y1 97",
-								"X0 137",
-								"Y1 30",
-								"P1",
-								"X1 171"
-								};
+				"X0 171",
+				"P0",
+				"X1 171",
+				"Y0 260",
+				"X0 171",
+				"Y1 31",
+				"X1 137",
+				"Y1 71",
+				"X0 137",
+				"Y1 31",
+				"X1 137",
+				"Y1 97",
+				"X0 137",
+				"Y1 30",
+				"P1",
+				"X1 171"
+				};
 
 void SystemClock_Config();
 static void MX_GPIO_Init();
@@ -54,10 +54,9 @@ int main(){
 	while (1){
 		for (uint16_t i = 0; i < 17; i++){
 			interpretInstructions(instructions[i]);
-			HAL_Delay(1000);
 		}
 
-		HAL_Delay(3000);
+		break;
 	}
 }
 
@@ -114,10 +113,10 @@ static void MX_GPIO_Init(){
 	__HAL_RCC_GPIOA_CLK_ENABLE();
 
 	/* Configure GPIO pin Output Level. */
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0|GPIO_PIN_5|GPIO_PIN_9|GPIO_PIN_10, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5|GPIO_PIN_9|GPIO_PIN_10, GPIO_PIN_RESET);
 
 	/* Configure GPIO pins: PA0, PA5, PA9 and PA10. */
-	GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_5|GPIO_PIN_9|GPIO_PIN_10;
+	GPIO_InitStruct.Pin = GPIO_PIN_5|GPIO_PIN_9|GPIO_PIN_10;
 	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -234,7 +233,6 @@ uint16_t stoi(uint8_t *string){
   *  @retval None.
   */
 void step(uint8_t axis, uint8_t direction, uint16_t steps){
-	HAL_GPIO_WritePin(GPIOA, stepperPin, axis);
 	HAL_GPIO_WritePin(GPIOA, directionPin, direction);
 
 	for (uint16_t i = 0; i < steps; i++){
