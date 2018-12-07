@@ -16,3 +16,13 @@ O _Michelangelo_ vem com intuito de sanar esses problemas evitando o uso desnece
 
 Outra motivação para o projeto foi: "Deve ser bem legal construir uma máquina que desenha sozinha". :)
 
+## Materiais e Ferramentas Utilizados
+
+Os materiais e ferramentas utilizados nesse projeto estão listados abaixo:
+* 1x STM32F030F4 (Cortex M0): Também chamado de "Green Pill", esse é microcontrolador usado no projeto.
+* 2x Motor de Passo + eixo: Foi retirado de um DVD antigo. Usou-se o eixo que o proprio aparelho usa para movimentar a lente.  
+* 2x Driver p/ Motor de Passo A4988: Usando para estabelecer a comunicação entre o Microcontrolados e os motores de passo.
+* Jumpers.
+* 2x Protoboard 760 pontos.
+* STM32CubeMX: Usando para configurar os pinos adequadamente e devido a implementação da Hardware Abstract Language (HAL).
+* Attolic TrueSTUDIO: IDE de desemvolvimento.
