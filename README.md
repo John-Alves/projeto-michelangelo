@@ -16,13 +16,15 @@ _Michelangelo_ vem com intuito de sanar esses problemas evitando o uso desnecess
 
 Outra motivação para o projeto foi: "Deve ser bem legal construir uma máquina que desenha sozinha". :D
 
-## Detalhes Técnicos
+## Detalhes e Limitações
 
 Para que se envie um desenho à maquina, é necessário gerá-lo em um arquivo G-Code, carregando-o posteriormente no programa GenerateInstructions para que as instruções de movimento tanto dos motores como da caneta sejam filtradas e traduzidas ao microcontrolador.
 
-As instruções traduzidas terão o seguinte formato: [Identificador do motor][Sentido de rotação] [Número de passos]. Existem três identificadores: P, servo motor; X, motor de passos do eixo x; e Y, motor de passos do eixo Y. Ademais, o sentido de rotação pode assumir o valores 0 (zero), sentido horário/de subida; e 1 (um), sentido anti-horário/de descida. Por fim, para as instruções relacionadas aos motores de passos, um terceiro argumento será utilizado, caracterizando o número de passos a serem realizados, no qual varia de 0 a 260 em virtude do alcance.
+As instruções traduzidas terão o seguinte formato: [Identificador do motor][Sentido de rotação] [Número de passos]. Existem três identificadores: P, servo motor; X, motor de passos do eixo x; e Y, motor de passos do eixo Y. Ademais, o sentido de rotação pode assumir os valores 0 (zero), sentido horário/de subida; e 1 (um), sentido anti-horário/de descida. Por fim, para as instruções relacionadas aos motores de passos, um terceiro argumento será utilizado, caracterizando o número de passos a serem realizados, no qual varia de 0 a 260 em virtude do alcance.
 
 De posse delas, o microcontrolador tratará essas instruções, controlando os comportamentos dos dois drivers A4988 e do servo motor de forma simultânea, permitindo que o desenho seja realizado.
+
+Inicialmente, codificamos o _Michelangelo_ para que faça desenhos lineares, ou seja, que contenha apenas linhas, independentemente da inclinação. Outra limitação imposta ao projeto se dá no alcance dos motores dos eixos. Como são utilizados motores de leitores antigos de DVD, estes possuem um alcance máximo, em média, de 4 centímetros, impossibilitando que a máquina faça desenhos mais expressivos.
 
 ## Materiais e Ferramentas Utilizadas
 
